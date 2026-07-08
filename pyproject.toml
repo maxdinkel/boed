@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boed"
+version = "0.1.0"
+description = "Bayesian Optimal Experimental Design on Finite Design Sets"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "numpy",
+]
+
+[project.optional-dependencies]
+paper = [
+    "numpy==2.4.6",
+    "scipy==1.18.0",
+    "matplotlib==3.10.9",
+    "numba==0.66.0",
+    "tqdm==4.68.3",
+    "jax==0.10.2",
+]
+
+cuda12 = [
+    "jax[cuda12]==0.10.2",
+]
+
+cuda13 = [
+    "jax[cuda13]==0.10.2",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
